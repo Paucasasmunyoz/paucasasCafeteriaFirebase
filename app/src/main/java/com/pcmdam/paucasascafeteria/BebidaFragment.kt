@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.paucmd.cafeteria.R
-import com.pcmdam.paucasascafeteria.BebidasProvider
 import com.pcmdam.paucasascafeteria.adapterBebida.BebidaAdapter
 
 class BebidaFragment : Fragment() {
@@ -29,7 +28,7 @@ class BebidaFragment : Fragment() {
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerBebida)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = BebidaAdapter(BebidasProvider.bebidaList)
-    }
+    };
+}
 
  /*Enaitz ho habia fet i hem funcionaba pero nose que va passar vaig tocar algo i ja no puc accedir al fragment de begudes */
-}

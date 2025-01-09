@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.paucmd.cafeteria.R
 import com.pcmdam.paucasascafeteria.Bebida
-import com.pcmdam.paucasascafeteria.adapterBebida.BebidaViewHolder
 
 class BebidaAdapter(private val BebidaList:List<Bebida>) : RecyclerView.Adapter<BebidaViewHolder>(){
 

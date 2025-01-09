@@ -1,32 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/comidaFragment">
-
-    <fragment
-        android:id="@+id/comidaFragment"
-        android:name="com.pcmdam.paucasascafeteria.ComidaFragment"
-        android:label="fragment_comida"
-        tools:layout="@layout/fragment_comida">
-        <action
-            android:id="@+id/action_comidaFragment_to_bebidaFragment"
-            app:destination="@id/bebidaFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/bebidaFragment"
-        android:name="com.pcmdam.paucasascafeteria.BebidaFragment"
-        android:label="fragment_bebida"
-        tools:layout="@layout/fragment_bebida">
-        <action
-            android:id="@+id/action_bebidaFragment_to_pagarFragment"
-            app:destination="@id/pagarFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/pagarFragment"
-        android:name="com.pcmdam.paucasascafeteria.PagarFragment"
-        android:label="fragment_pagar"
-        tools:layout="@layout/fragment_pagar" />
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/nav_graph"
+app:startDestination="@id/comidaFragment2">
+<fragment
+    android:id="@+id/comidaFragment2"
+    android:name="com.pcmdam.paucasascafeteria.ComidaFragment"
+    android:label="fragment_comida"
+    tools:layout="@layout/fragment_comida" />
+<fragment
+    android:id="@+id/bebidaFragment2"
+    android:name="com.pcmdam.paucasascafeteria.BebidaFragment"
+    android:label="fragment_bebida"
+    tools:layout="@layout/fragment_bebida" />
+<fragment
+    android:id="@+id/pagarFragment"
+    android:name="com.pcmdam.paucasascafeteria.PagarFragment"
+    android:label="fragment_pagar"
+    tools:layout="@layout/fragment_pagar" />
 </navigation>

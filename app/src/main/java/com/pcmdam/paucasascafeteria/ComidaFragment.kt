@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.paucmd.cafeteria.R
-import com.pcmdam.paucasascafeteria.adapterBebida.BebidaAdapter
 import com.pcmdam.paucasascafeteria.adapterComida.ComidaAdapter
 
 
