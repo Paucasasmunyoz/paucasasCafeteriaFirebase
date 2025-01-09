@@ -13,9 +13,10 @@ class LoginProvider {
         }
 
         fun addUser(username: String, password: String) {
-            val nouUser = User(username, password)
-            userName.add(username.length+1, nouUser)
+            val newUser = User(username, password)
+            userName.add(newUser)
         }
+
 
 
         private val userName = mutableListOf<User>(

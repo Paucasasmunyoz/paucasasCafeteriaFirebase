@@ -16,11 +16,11 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(layout.activity_register)
+        setContentView(R.layout.activity_register)
 
-        val usernameEditText: EditText = findViewById(id.usernameEditText)
-        val passwordEditText: EditText = findViewById(id.passwordEditText)
-        val registerButton: Button = findViewById(id.loginButton)
+        val usernameEditText: EditText = findViewById(R.id.usernameEditText)
+        val passwordEditText: EditText = findViewById(R.id.passwordEditText)
+        val registerButton: Button = findViewById(R.id.registerButton)
 
         registerButton.setOnClickListener {
             val username = usernameEditText.text.toString()
@@ -28,6 +28,7 @@ class RegisterActivity : AppCompatActivity() {
 
             LoginProvider.addUser(username, password)
 
+            // Redirigir al LoginActivity después de registrar el usuario
             startActivity(Intent(this, LoginActivity::class.java))
         }
     }
