@@ -1,6 +1,3 @@
 package com.pcmdam.paucasascafeteria
 
-data class Comida (
-    val name:String,
-    val price: String,
-    val photo:String)
+class Comida(nombre: String, precio: Double, val photo: String) : Producto(nombre, precio)

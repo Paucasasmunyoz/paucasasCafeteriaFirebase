@@ -28,7 +28,6 @@ class RegisterActivity : AppCompatActivity() {
 
             LoginProvider.addUser(username, password)
 
-            // Redirigir al LoginActivity después de registrar el usuario
             startActivity(Intent(this, LoginActivity::class.java))
         }
     }

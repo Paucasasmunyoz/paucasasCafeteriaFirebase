@@ -40,6 +40,7 @@ android {
 dependencies {
 
     implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.activity)
     val nav_version = "2.7.5"
     val lifecycle_version = "2.6.2"
 
