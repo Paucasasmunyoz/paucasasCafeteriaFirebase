@@ -1,26 +1,25 @@
 package com.pcmdam.paucasascafeteria
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.activity.viewModels
-import androidx.lifecycle.ViewModelProvider
-import com.pcmdam.paucasascafeteria.LoginViewModel
-import com.pcmdam.paucasascafeteria.RegisterActivity
+import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import com.paucmd.cafeteria.R
+import com.pcmdam.paucasascafeteria.FragmentActivity
 
 class LoginActivity : AppCompatActivity() {
 
-    private lateinit var loginViewModel: LoginViewModel
-    private val viewModel: LoginViewModel by viewModels()
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_loogin)
-        loginViewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
+
+        // Inicializa Firebase Auth
+        auth = FirebaseAuth.getInstance()
 
         val usernameEditText: EditText = findViewById(R.id.usernameEditText)
         val passwordEditText: EditText = findViewById(R.id.passwordEditText)
@@ -31,12 +30,19 @@ class LoginActivity : AppCompatActivity() {
             val username = usernameEditText.text.toString()
             val password = passwordEditText.text.toString()
 
-            if (viewModel.login(username, password)) {
-                Toast.makeText(this, "Inicio de sesion correcto", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, FragmentActivity::class.java))
-
-            }else {
-                Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
+            if (username.isNotEmpty() && password.isNotEmpty()) {
+                auth.signInWithEmailAndPassword(username, password)
+                    .addOnCompleteListener(this) { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(this, "Inicio de sesión correcto", Toast.LENGTH_SHORT).show()
+                            startActivity(Intent(this, FragmentActivity::class.java))
+                            finish() // Cierra la actividad de login
+                        } else {
+                            Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+            } else {
+                Toast.makeText(this, "Por favor ingrese todos los campos", Toast.LENGTH_SHORT).show()
             }
         }
 
